@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  vuln_db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vuln_db_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: vulnerability_db
+      POSTGRES_USER: vuln_user
+      POSTGRES_PASSWORD: vuln_secure_pass
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - vuln_db_data:/var/lib/postgresql/data
+      - ./backups:/backups
+      - ../config/schemas_and_config:/config:ro
+      - ../config/schemas_and_config/vulnerability_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    networks:
+      - vuln_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vuln_user -d vulnerability_db"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+volumes:
+  vuln_db_data:
+    driver: local
+
+networks:
+  vuln_network:
+    driver: bridge

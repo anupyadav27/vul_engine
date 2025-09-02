@@ -1,0 +1,71 @@
+# Docker Compose for Vulnerability Management System
+# Services: vuln_db (PostgreSQL), vul_engine (API), vul_agent (OS agent)
+
+version: '3.8'
+
+services:
+  vuln_db:
+    image: postgres:15
+    container_name: vuln_db
+    restart: always
+    environment:
+      POSTGRES_DB: vulnerability_db
+      POSTGRES_USER: vuln_user
+      POSTGRES_PASSWORD: vuln_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vuln_user -d vulnerability_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  vul_engine:
+    build:
+      context: ../vul_engine
+      dockerfile: Dockerfile
+    container_name: vul_engine
+    depends_on:
+      vuln_db:
+        condition: service_healthy
+    environment:
+      DB_HOST: vuln_db
+      DB_PORT: 5432
+      DB_NAME: vulnerability_db
+      DB_USER: vuln_user
+      DB_PASSWORD: vuln_pass
+      API_KEYS: '["your-secret-api-key"]'
+      SECRET_KEY: your-secret-key
+      HOST: 0.0.0.0
+      PORT: 8000
+      DEBUG: "false"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../vul_engine:/app
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  vul_agent:
+    build:
+      context: ../vul_agent/os_agent
+      dockerfile: Dockerfile
+    container_name: vul_agent
+    depends_on:
+      vul_engine:
+        condition: service_healthy
+    environment:
+      ENGINE_URL: http://vul_engine:8000
+      API_KEY: your-secret-api-key
+    volumes:
+      - ../vul_agent/os_agent:/agent
+    command: ["python3", "vul_agent.py", "--scan"]
+
+volumes:
+  db_data:

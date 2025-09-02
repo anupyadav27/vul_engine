@@ -1,0 +1,189 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database Container
+  vuln_db_postgres:
+    image: postgres:15-alpine
+    container_name: vuln_db_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-vulnerability_db}
+      POSTGRES_USER: ${POSTGRES_USER:-vuln_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vuln_pass}
+      # Performance optimizations
+      POSTGRES_SHARED_PRELOAD_LIBRARIES: pg_stat_statements
+      POSTGRES_MAX_CONNECTIONS: ${DB_MAX_CONNECTIONS:-100}
+    ports:
+      - "${POSTGRES_HOST_PORT:-5432}:5432"
+    volumes:
+      # Use named volume for cross-platform compatibility
+      - vuln_db_postgres_data:/var/lib/postgresql/data
+      # Mount initialization scripts (read-only)
+      - ./db_schema/sql:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-vuln_user} -d ${POSTGRES_DB:-vulnerability_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command: >
+      postgres
+      -c shared_preload_libraries=pg_stat_statements
+      -c max_connections=${DB_MAX_CONNECTIONS:-100}
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+      -c work_mem=4MB
+      -c min_wal_size=1GB
+      -c max_wal_size=4GB
+    networks:
+      - vuln_db_network
+    labels:
+      - "traefik.enable=false"
+      - "com.vulnerability-db.service=database"
+
+  # Database Schema Initializer (runs once)
+  vuln_db_initializer:
+    image: postgres:15-alpine
+    container_name: vuln_db_initializer
+    environment:
+      PGHOST: vuln_db_postgres
+      PGPORT: 5432
+      PGDATABASE: ${POSTGRES_DB:-vulnerability_db}
+      PGUSER: ${POSTGRES_USER:-vuln_user}
+      PGPASSWORD: ${POSTGRES_PASSWORD:-vuln_pass}
+    volumes:
+      # Mount schema files (read-only)
+      - ./db_schema/sql:/schema:ro
+      - ./db_schema/scripts:/scripts:ro
+    depends_on:
+      vuln_db_postgres:
+        condition: service_healthy
+    command: >
+      sh -c "
+        echo 'Waiting for PostgreSQL to be ready...' &&
+        until pg_isready -h vuln_db_postgres -p 5432 -U ${POSTGRES_USER:-vuln_user}; do
+          echo 'PostgreSQL is unavailable - sleeping'
+          sleep 2
+        done &&
+        echo 'PostgreSQL is ready - initializing schema...' &&
+        
+        # Check if schema already exists
+        TABLES=$$(psql -h vuln_db_postgres -U ${POSTGRES_USER:-vuln_user} -d ${POSTGRES_DB:-vulnerability_db} -t -c \"SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public' AND table_name LIKE 'vulnerability_%';\") &&
+        
+        if [ \"$$TABLES\" -gt 0 ]; then
+          echo 'Schema already exists, skipping initialization'
+        else
+          echo 'Initializing database schema...' &&
+          
+          # Run schema files in order
+          for sql_file in /schema/01_*.sql; do
+            if [ -f \"$$sql_file\" ]; then
+              echo \"Running $$sql_file\" &&
+              psql -h vuln_db_postgres -U ${POSTGRES_USER:-vuln_user} -d ${POSTGRES_DB:-vulnerability_db} -f \"$$sql_file\" || exit 1
+            fi
+          done &&
+          
+          for sql_file in /schema/02_*.sql; do
+            if [ -f \"$$sql_file\" ]; then
+              echo \"Running $$sql_file\" &&
+              psql -h vuln_db_postgres -U ${POSTGRES_USER:-vuln_user} -d ${POSTGRES_DB:-vulnerability_db} -f \"$$sql_file\" || exit 1
+            fi
+          done &&
+          
+          for sql_file in /schema/03_*.sql; do
+            if [ -f \"$$sql_file\" ]; then
+              echo \"Running $$sql_file\" &&
+              psql -h vuln_db_postgres -U ${POSTGRES_USER:-vuln_user} -d ${POSTGRES_DB:-vulnerability_db} -f \"$$sql_file\" || exit 1
+            fi
+          done &&
+          
+          echo 'Schema initialization completed successfully'
+        fi
+      "
+    networks:
+      - vuln_db_network
+    restart: "no"
+
+  # PgAdmin (Optional - for database management)
+  vuln_db_pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: vuln_db_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@vulndb.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin_pass}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+    ports:
+      - "${PGADMIN_HOST_PORT:-8080}:80"
+    volumes:
+      # Use named volume for PgAdmin data
+      - vuln_db_pgadmin_data:/var/lib/pgadmin
+      # Mount server configuration (if exists)
+      - ./config/pgadmin_servers.json:/pgadmin4/servers.json:ro
+    depends_on:
+      vuln_db_postgres:
+        condition: service_healthy
+    profiles:
+      - pgadmin
+    networks:
+      - vuln_db_network
+    labels:
+      - "traefik.enable=false"
+      - "com.vulnerability-db.service=admin"
+
+  # Redis for caching (optional)
+  vuln_db_redis:
+    image: redis:7-alpine
+    container_name: vuln_db_redis
+    restart: unless-stopped
+    command: >
+      redis-server
+      --appendonly yes
+      --appendfsync everysec
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+    ports:
+      - "${REDIS_HOST_PORT:-6379}:6379"
+    volumes:
+      - vuln_db_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    profiles:
+      - cache
+    networks:
+      - vuln_db_network
+    labels:
+      - "traefik.enable=false"
+      - "com.vulnerability-db.service=cache"
+
+# Named volumes for cross-platform data persistence
+volumes:
+  vuln_db_postgres_data:
+    driver: local
+    labels:
+      - "com.vulnerability-db.volume=database"
+  vuln_db_pgadmin_data:
+    driver: local
+    labels:
+      - "com.vulnerability-db.volume=admin"
+  vuln_db_redis_data:
+    driver: local
+    labels:
+      - "com.vulnerability-db.volume=cache"
+
+# Custom network for service communication
+networks:
+  vuln_db_network:
+    driver: bridge
+    labels:
+      - "com.vulnerability-db.network=internal"

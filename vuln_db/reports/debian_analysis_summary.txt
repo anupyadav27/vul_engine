@@ -1,0 +1,82 @@
+
+# Debian Security Tracker Data Structure Analysis
+
+## Summary
+- **Total CVE Records Analyzed**: 264
+- **Total Packages Analyzed**: 50
+- **Unique CVEs Found**: 263
+- **Analysis Date**: 2025-08-31T13:03:04.890633
+- **Total Fields Found**: 51
+- **Required Fields**: 51
+- **Debian-Specific Fields**: 24
+
+## Debian Releases Found
+sid, trixie, bookworm, bullseye, forky
+
+## Package Analysis
+- **Most Vulnerable Packages**: 389-ds-base, activemq, amd64-microcode, advancecomp, alpine
+- **Average CVEs per Package**: 5.4
+
+## Required Fields Analysis
+
+### _debian_metadata
+- **Data Types**: dict
+- **Patterns**: None
+- **Sample Values**: ...
+
+### _debian_metadata.has_debianbug
+- **Data Types**: bool
+- **Patterns**: enumerated
+- **Sample Values**: False, False, False...
+
+### _debian_metadata.scope
+- **Data Types**: str
+- **Patterns**: enumerated
+- **Sample Values**: local, local, local...
+
+### _debian_metadata.source_package
+- **Data Types**: str
+- **Patterns**: None
+- **Sample Values**: 389-ds-base, 389-ds-base, 389-ds-base...
+
+### _debian_metadata.total_releases
+- **Data Types**: int
+- **Patterns**: enumerated
+- **Sample Values**: 5, 5, 5...
+
+### cve_id
+- **Data Types**: str
+- **Patterns**: cve_id
+- **Sample Values**: CVE-2012-0833, CVE-2012-2678, CVE-2012-2746...
+
+### debianbug
+- **Data Types**: int
+- **Patterns**: debian_bug_id
+- **Sample Values**: 688942, 704077, 704421...
+
+### description
+- **Data Types**: str
+- **Patterns**: None
+- **Sample Values**: The acllas__handle_group_entry function in servers/plugins/acl/acllas.c in 389 Directory Server before 1.2.10 does not properly handled access control instructions (ACIs) that use certificate groups, which allows remote authenticated LDAP users with a certificate group to cause a denial of service (infinite loop and CPU consumption) by binding to the server., 389 Directory Server before 1.2.11.6 (aka Red Hat Directory Server before 8.2.10-3), after the password for a LDAP user has been changed and before the server has been reset, allows remote attackers to read the plaintext password via the unhashed#user#password attribute., 389 Directory Server before 1.2.11.6 (aka Red Hat Directory Server before 8.2.10-3), when the password of a LDAP user has been changed and audit logging is enabled, saves the new password to the log in plain text, which allows remote authenticated users to read the password....
+
+### package_name
+- **Data Types**: str
+- **Patterns**: None
+- **Sample Values**: 389-ds-base, 389-ds-base, 389-ds-base...
+
+### releases
+- **Data Types**: dict
+- **Patterns**: None
+- **Sample Values**: ...
+
+## Debian-Specific Recommendations
+1. Process 5 Debian releases: sid, trixie, bookworm, bullseye, forky
+2. Include Debian bug tracking integration
+3. Handle Debian repository information (main, security, updates)
+4. Focus on 51 required fields for Debian parsing
+5. Implement Debian-specific field validation and normalization
+
+## Parser Implementation
+- **Required Transformations**: process_debian_releases, determine_debian_package_status, normalize_debian_bug_id, normalize_cve_id, parse_debian_urgency, validate_debian_version
+- **Debian Releases to Handle**: 5
+- **Field Mappings**: 51 mappings generated
