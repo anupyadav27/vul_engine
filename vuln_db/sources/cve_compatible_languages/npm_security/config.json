@@ -1,0 +1,39 @@
+{
+  "source_config": {
+    "name": "npm Security Advisories",
+    "source_id": "npm_security",
+    "category": "cve_compatible_languages",
+    "priority": "high",
+    "status": "working",
+    "base_url": "https://registry.npmjs.org",
+    "audit_url": "https://registry.npmjs.org/-/npm/v1/security/audits",
+    "advisory_url": "https://registry.npmjs.org/-/npm/v1/security/advisories",
+    "response_time": 1.23,
+    "last_tested": "2025-08-30T15:58:32.776132"
+  },
+  "parser_config": {
+    "module": "parser.py",
+    "class": "NpmSecurityParser",
+    "update_frequency": "daily",
+    "batch_size": 100,
+    "timeout": 30,
+    "retry_attempts": 3
+  },
+  "data_mapping": {
+    "vulnerability_id_field": "advisory_id",
+    "cve_reference_field": "cves",
+    "severity_field": "severity",
+    "date_field": "created",
+    "package_field": "package_name"
+  },
+  "filter_config": {
+    "severity_levels": ["Critical", "High", "Moderate", "Low"],
+    "package_ecosystems": ["npm", "node"],
+    "vulnerability_types": ["all"]
+  },
+  "integration": {
+    "engine_compatibility": "existing_cve_engine",
+    "enhancement_needed": false,
+    "notes": "Language vulnerability intelligence - use existing CVE engine"
+  }
+}

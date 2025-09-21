@@ -1,0 +1,38 @@
+{
+  "source_config": {
+    "name": "Ubuntu Security Notices",
+    "source_id": "ubuntu_security",
+    "category": "cve_compatible_os",
+    "priority": "high",
+    "status": "working",
+    "base_url": "https://ubuntu.com/security/notices",
+    "api_url": "https://ubuntu.com/security/notices.json",
+    "response_time": 0.92,
+    "last_tested": "2025-08-30T15:58:32.776132"
+  },
+  "parser_config": {
+    "module": "parser.py",
+    "class": "UbuntuSecurityParser",
+    "update_frequency": "daily",
+    "batch_size": 100,
+    "timeout": 30,
+    "retry_attempts": 3
+  },
+  "data_mapping": {
+    "vulnerability_id_field": "usn_id",
+    "cve_reference_field": "cves",
+    "severity_field": "severity",
+    "date_field": "date",
+    "package_field": "packages"
+  },
+  "filter_config": {
+    "supported_versions": ["22.04", "20.04", "18.04"],
+    "severity_levels": ["Critical", "High", "Medium", "Low"],
+    "package_types": ["all"]
+  },
+  "integration": {
+    "engine_compatibility": "existing_cve_engine",
+    "enhancement_needed": false,
+    "notes": "OS vulnerability intelligence - use existing CVE engine"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "source_name": "aws_security",
+  "display_name": "AWS Security Bulletins",
+  "category": "advisory_cloud_bulletins",
+  "priority": "HIGH",
+  "enabled": true,
+  "update_frequency": "daily",
+  "description": "Official AWS security bulletins and advisories",
+  "data_format": "html/rss",
+  "endpoints": {
+    "main_feed": "https://aws.amazon.com/security/security-bulletins",
+    "rss_feed": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+    "search_api": "https://aws.amazon.com/security/security-bulletins/?q="
+  },
+  "supported_formats": ["json", "xml", "html"],
+  "rate_limits": {
+    "requests_per_hour": 100,
+    "concurrent_requests": 5
+  },
+  "authentication": {
+    "type": "none",
+    "required": false
+  },
+  "data_fields": {
+    "required": ["title", "url", "date"],
+    "optional": ["description", "severity", "cves", "affected_services"]
+  },
+  "mapping": {
+    "vulnerability_id": "generated",
+    "title": "title",
+    "description": "description",
+    "severity": "severity",
+    "published_date": "date",
+    "cve_references": "cves",
+    "source_url": "url"
+  },
+  "filters": {
+    "keywords": ["security", "vulnerability", "advisory", "bulletin"],
+    "exclude_keywords": ["announcement", "feature"],
+    "services": ["EC2", "S3", "Lambda", "RDS", "EKS", "ECS", "CloudFormation", "IAM"]
+  },
+  "validation": {
+    "required_fields": ["title", "url"],
+    "date_format": "auto_detect",
+    "url_validation": true
+  },
+  "source_config": {
+    "name": "aws_security",
+    "display_name": "AWS Security Bulletins",
+    "category": "advisory_cloud_bulletins",
+    "priority": "high",
+    "enabled": true,
+    "vendor": "amazon",
+    "cloud_provider": "aws"
+  },
+  "endpoints": {
+    "primary": "https://aws.amazon.com/security/security-bulletins",
+    "rss_feed": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+    "api_base": "https://aws.amazon.com/security/",
+    "backup_sources": [
+      "https://aws.amazon.com/security/security-bulletins/",
+      "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/"
+    ]
+  },
+  "parsing_config": {
+    "format": "html_rss",
+    "rate_limit": {
+      "requests_per_minute": 30,
+      "burst_limit": 10
+    },
+    "timeout": 30,
+    "retry_attempts": 3,
+    "user_agent": "VulnDB-AWS-Parser/1.0"
+  },
+  "data_mapping": {
+    "id_field": "url",
+    "title_selector": "h3, h2, .title",
+    "description_selector": "p, .description",
+    "date_selector": "time, .date",
+    "severity_keywords": ["Critical", "High", "Medium", "Low", "Important"],
+    "cve_pattern": "CVE-\\d{4}-\\d+"
+  },
+  "schedule": {
+    "update_frequency": "hourly",
+    "full_sync_frequency": "daily",
+    "preferred_time": "02:00",
+    "timezone": "UTC"
+  },
+  "aws_services": [
+    "EC2", "S3", "Lambda", "RDS", "EKS", "ECS", 
+    "CloudFormation", "IAM", "VPC", "CloudTrail",
+    "CloudWatch", "API Gateway", "ElastiCache",
+    "Redshift", "DynamoDB", "SQS", "SNS", "ELB",
+    "Route53", "CloudFront", "WAF", "Shield"
+  ],
+  "metadata": {
+    "source_type": "aws_security_bulletin",
+    "data_format": "security_advisory",
+    "update_mechanism": "polling",
+    "authentication_required": false,
+    "rate_limited": true
+  }
+}
