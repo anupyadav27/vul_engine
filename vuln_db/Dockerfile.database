@@ -1,0 +1,155 @@
+# Dockerfile for Vulnerability Database with Pre-loaded Data
+# This creates a PostgreSQL image with all vulnerability data pre-loaded
+FROM postgres:15-alpine
+
+# Set environment variables
+ENV POSTGRES_DB=vulnerability_db
+ENV POSTGRES_USER=vuln_user
+ENV POSTGRES_PASSWORD=vuln_pass
+ENV POSTGRES_INITDB_ARGS="--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+
+# Install additional packages for data processing
+RUN apk add --no-cache \
+    python3 \
+    py3-pip \
+    curl \
+    && pip3 install psycopg2-binary requests python-dotenv
+
+# Create directories
+RUN mkdir -p /docker-entrypoint-initdb.d /data /scripts /backup
+
+# Copy database schema files
+COPY db_schema/sql/ /docker-entrypoint-initdb.d/
+
+# Copy vulnerability data files
+COPY nvd_data/ /data/nvd_data/
+COPY vuln_db_backup.sql /backup/
+
+# Copy initialization scripts
+COPY db/init_database.py /scripts/
+COPY db/deploy.sh /scripts/
+
+# Copy Python requirements and dependencies
+COPY requirements.txt /scripts/
+RUN pip3 install -r /scripts/requirements.txt
+
+# Copy database configuration
+COPY config/schemas_and_config/postgresql.conf /etc/postgresql/postgresql.conf
+COPY config/schemas_and_config/database_settings.json /data/
+
+# Create custom initialization script
+RUN cat > /docker-entrypoint-initdb.d/99_load_vulnerability_data.sh << 'EOF'
+#!/bin/bash
+set -e
+
+echo "🚀 Starting vulnerability database initialization..."
+
+# Wait for PostgreSQL to be ready
+until pg_isready -U $POSTGRES_USER -d $POSTGRES_DB; do
+  echo "⏳ Waiting for PostgreSQL to be ready..."
+  sleep 2
+done
+
+echo "✅ PostgreSQL is ready, loading vulnerability data..."
+
+# Check if data already exists
+EXISTING_CVES=$(psql -U $POSTGRES_USER -d $POSTGRES_DB -t -c "SELECT COUNT(*) FROM cves;" 2>/dev/null || echo "0")
+
+if [ "$EXISTING_CVES" -gt 0 ]; then
+    echo "📊 Database already contains $EXISTING_CVES CVEs, skipping data load"
+else
+    echo "📥 Loading vulnerability data from backup..."
+    
+    # Load the backup if it exists
+    if [ -f /backup/vuln_db_backup.sql ]; then
+        echo "🔄 Restoring from SQL backup..."
+        psql -U $POSTGRES_USER -d $POSTGRES_DB -f /backup/vuln_db_backup.sql
+        
+        # Verify data was loaded
+        CVES_COUNT=$(psql -U $POSTGRES_USER -d $POSTGRES_DB -t -c "SELECT COUNT(*) FROM cves;" 2>/dev/null || echo "0")
+        echo "✅ Loaded $CVES_COUNT CVEs from backup"
+    else
+        echo "⚠️ No backup file found, database will be empty"
+    fi
+fi
+
+# Create indexes for better performance
+echo "🔧 Creating performance indexes..."
+psql -U $POSTGRES_USER -d $POSTGRES_DB << 'SQL'
+-- Performance indexes
+CREATE INDEX IF NOT EXISTS idx_cves_published_date ON cves(published_date);
+CREATE INDEX IF NOT EXISTS idx_cves_last_modified ON cves(last_modified_date);
+CREATE INDEX IF NOT EXISTS idx_cves_severity ON cves(severity_score);
+CREATE INDEX IF NOT EXISTS idx_cves_status ON cves(vuln_status);
+CREATE INDEX IF NOT EXISTS idx_cpe_vendor_product ON cpe_matches(vendor, product);
+CREATE INDEX IF NOT EXISTS idx_cpe_version ON cpe_matches(version);
+
+-- Statistics update
+ANALYZE;
+
+-- Show final statistics
+SELECT 
+    'cves' as table_name, 
+    COUNT(*) as record_count 
+FROM cves
+UNION ALL
+SELECT 
+    'cpe_matches' as table_name, 
+    COUNT(*) as record_count 
+FROM cpe_matches
+UNION ALL
+SELECT 
+    'mitre_techniques' as table_name, 
+    COUNT(*) as record_count 
+FROM mitre_techniques;
+SQL
+
+echo "🎉 Vulnerability database initialization completed!"
+EOF
+
+# Make the script executable
+RUN chmod +x /docker-entrypoint-initdb.d/99_load_vulnerability_data.sh
+
+# Copy health check script
+RUN cat > /usr/local/bin/healthcheck.sh << 'EOF'
+#!/bin/bash
+set -e
+
+# Check if PostgreSQL is ready
+if ! pg_isready -U $POSTGRES_USER -d $POSTGRES_DB; then
+    echo "❌ PostgreSQL is not ready"
+    exit 1
+fi
+
+# Check if vulnerability data exists
+CVES_COUNT=$(psql -U $POSTGRES_USER -d $POSTGRES_DB -t -c "SELECT COUNT(*) FROM cves;" 2>/dev/null || echo "0")
+
+if [ "$CVES_COUNT" -eq 0 ]; then
+    echo "⚠️ No vulnerability data found in database"
+    exit 1
+fi
+
+echo "✅ Database is healthy with $CVES_COUNT CVEs"
+exit 0
+EOF
+
+RUN chmod +x /usr/local/bin/healthcheck.sh
+
+# Set custom healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD /usr/local/bin/healthcheck.sh
+
+# Expose PostgreSQL port
+EXPOSE 5432
+
+# Add labels for identification
+LABEL maintainer="vulnerability-engine-team"
+LABEL description="PostgreSQL database with pre-loaded vulnerability data"
+LABEL version="1.0"
+LABEL data_source="NVD, MITRE ATT&CK, and other vulnerability feeds"
+
+# Set working directory
+WORKDIR /data
+
+# Default command (PostgreSQL will start automatically)
+CMD ["postgres", "-c", "shared_preload_libraries=pg_stat_statements", "-c", "max_connections=100", "-c", "shared_buffers=256MB"]
