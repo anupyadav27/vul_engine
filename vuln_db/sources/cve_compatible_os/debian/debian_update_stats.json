@@ -1,0 +1,15 @@
+{
+  "source_name": "debian",
+  "start_time": "2025-09-02T16:00:59.237871",
+  "end_time": "2025-09-02T16:01:54.705060",
+  "duration_seconds": 55.467189,
+  "total_packages": 0,
+  "total_fresh_vulnerabilities": 44595,
+  "new_cves_found": 2272,
+  "successfully_processed": 2272,
+  "failed_processing": 0,
+  "previous_latest_cve": "CVE-2025-9375",
+  "new_latest_cve": "CVE-2025-58160",
+  "status": "success",
+  "efficiency_gained": "42,323 CVEs skipped"
+}

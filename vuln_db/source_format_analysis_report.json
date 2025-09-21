@@ -1,0 +1,1208 @@
+{
+  "analysis_metadata": {
+    "total_sources_analyzed": 38,
+    "analysis_timestamp": "2025-08-31",
+    "analyzer_version": "1.0.0"
+  },
+  "format_distribution": {
+    "json_api": {
+      "count": 2,
+      "sources": [
+        "NVD",
+        "npm Security Advisories"
+      ],
+      "complexity": "low",
+      "description": "JSON API endpoints"
+    },
+    "html_scraping": {
+      "count": 29,
+      "sources": [
+        "Debian Security Tracker",
+        "Ubuntu Security Notices",
+        "Red Hat Security Advisories",
+        "Amazon Linux Security",
+        "SUSE Security",
+        "CentOS Security",
+        "Oracle Linux Security",
+        "OpenShift Security",
+        "JBoss Security",
+        "PyPI Security",
+        "Maven Central (OSS Index)",
+        "Go Vulnerability Database",
+        "AWS Security Bulletins",
+        "GCP Security Bulletins",
+        "Oracle Cloud Security",
+        "Oracle Database Security",
+        "WebLogic Security",
+        "PostgreSQL Security",
+        "MySQL Security",
+        "Redis Security",
+        "MariaDB Security",
+        "MongoDB Security",
+        "Cassandra Security",
+        "Apache Security",
+        "Nginx Security",
+        "Tomcat Security",
+        "Istio Security",
+        "Azure Security Updates",
+        "SQL Server Security"
+      ],
+      "complexity": "high",
+      "description": "HTML pages requiring web scraping"
+    },
+    "dynamic_js": {
+      "count": 1,
+      "sources": [
+        "Windows Security Updates"
+      ],
+      "complexity": "very_high",
+      "description": "Dynamic JavaScript-rendered pages"
+    },
+    "github_api": {
+      "count": 4,
+      "sources": [
+        "GitHub Security Advisories",
+        "HAProxy Security",
+        "Envoy Security",
+        "Rancher Security"
+      ],
+      "complexity": "low",
+      "description": "GitHub API endpoints"
+    },
+    "unknown": {
+      "count": 2,
+      "sources": [
+        "WebSphere Security",
+        "IBM Cloud Security"
+      ],
+      "complexity": "unknown",
+      "description": "Unknown format"
+    }
+  },
+  "complexity_distribution": {
+    "low": 3,
+    "high": 33,
+    "unknown": 2
+  },
+  "detailed_classifications": [
+    {
+      "name": "NVD",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0/",
+      "detected_formats": [
+        "json_api"
+      ],
+      "primary_format": "json_api",
+      "complexity": "low",
+      "implementation_approach": "paginated_api",
+      "confidence": 1.0,
+      "analysis_details": {
+        "json_api": {
+          "score": 16,
+          "matches": [
+            "URL: /rest/json/",
+            "URL: /json/",
+            "Content: ^\\s*\\{",
+            "Content: \".*\":\\s*[{\\[]"
+          ],
+          "complexity": "low",
+          "description": "JSON API endpoints"
+        }
+      },
+      "special_notes": "Paginated API with rate limiting"
+    },
+    {
+      "name": "Debian Security Tracker",
+      "url": "https://security-tracker.debian.org/tracker/data/json",
+      "detected_formats": [
+        "html_scraping",
+        "dynamic_js",
+        "structured_data"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 20,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "dynamic_js": {
+          "score": 5,
+          "matches": [
+            "Content: <script"
+          ],
+          "complexity": "very_high",
+          "description": "Dynamic JavaScript-rendered pages"
+        },
+        "structured_data": {
+          "score": 6,
+          "matches": [
+            "URL: /data/",
+            "URL: /tracker/data/"
+          ],
+          "complexity": "low",
+          "description": "Structured data files (CSV, TSV)"
+        }
+      }
+    },
+    {
+      "name": "Ubuntu Security Notices",
+      "url": "https://ubuntu.com/security/notices",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 26,
+          "matches": [
+            "URL: /security/",
+            "URL: /notices",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Red Hat Security Advisories",
+      "url": "https://access.redhat.com/security/security-updates/",
+      "detected_formats": [
+        "html_scraping",
+        "github_api",
+        "dynamic_js"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "github_api": {
+          "score": 5,
+          "matches": [
+            "Content: github"
+          ],
+          "complexity": "low",
+          "description": "GitHub API endpoints"
+        },
+        "dynamic_js": {
+          "score": 5,
+          "matches": [
+            "Content: <script"
+          ],
+          "complexity": "very_high",
+          "description": "Dynamic JavaScript-rendered pages"
+        }
+      }
+    },
+    {
+      "name": "Amazon Linux Security",
+      "url": "https://alas.aws.amazon.com/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 20,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "SUSE Security",
+      "url": "https://www.suse.com/security/cve/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 23,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "CentOS Security",
+      "url": "https://access.redhat.com/security/updates/?family=centos",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 0.6,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 6,
+          "matches": [
+            "URL: /security/",
+            "URL: /updates"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Oracle Linux Security",
+      "url": "https://linux.oracle.com/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 23,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Windows Security Updates",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "dynamic_js",
+      "complexity": "high",
+      "implementation_approach": "api_discovery",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 15,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      },
+      "special_notes": "Dynamic page - may have hidden API endpoints"
+    },
+    {
+      "name": "OpenShift Security",
+      "url": "https://access.redhat.com/security/updates/advisory",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 21,
+          "matches": [
+            "URL: /security/",
+            "URL: /updates",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "JBoss Security",
+      "url": "https://access.redhat.com/security/updates/advisory",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 21,
+          "matches": [
+            "URL: /security/",
+            "URL: /updates",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "npm Security Advisories",
+      "url": "https://registry.npmjs.org/-/npm/vuln/npm",
+      "detected_formats": [
+        "json_api"
+      ],
+      "primary_format": "json_api",
+      "complexity": "low",
+      "implementation_approach": "template",
+      "confidence": 0.8,
+      "analysis_details": {
+        "json_api": {
+          "score": 8,
+          "matches": [
+            "URL: registry\\.npmjs\\.org",
+            "Content: ^\\s*\\{"
+          ],
+          "complexity": "low",
+          "description": "JSON API endpoints"
+        }
+      }
+    },
+    {
+      "name": "PyPI Security",
+      "url": "https://pypi.org/security/",
+      "detected_formats": [
+        "html_scraping",
+        "structured_data"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 23,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "structured_data": {
+          "score": 5,
+          "matches": [
+            "Content: ^[^<{]*,.*,"
+          ],
+          "complexity": "low",
+          "description": "Structured data files (CSV, TSV)"
+        }
+      }
+    },
+    {
+      "name": "Maven Central (OSS Index)",
+      "url": "https://ossindex.sonatype.org/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 20,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Go Vulnerability Database",
+      "url": "https://pkg.go.dev/vuln/",
+      "detected_formats": [
+        "html_scraping",
+        "dynamic_js"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 15,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "dynamic_js": {
+          "score": 10,
+          "matches": [
+            "Content: <script",
+            "Content: data-.*="
+          ],
+          "complexity": "very_high",
+          "description": "Dynamic JavaScript-rendered pages"
+        }
+      }
+    },
+    {
+      "name": "GitHub Security Advisories",
+      "url": "https://api.github.com/advisories",
+      "detected_formats": [
+        "json_api",
+        "github_api"
+      ],
+      "primary_format": "github_api",
+      "complexity": "low",
+      "implementation_approach": "template",
+      "confidence": 1.0,
+      "analysis_details": {
+        "json_api": {
+          "score": 8,
+          "matches": [
+            "URL: api\\..*\\.com",
+            "Content: ^\\s*\\{"
+          ],
+          "complexity": "low",
+          "description": "JSON API endpoints"
+        },
+        "github_api": {
+          "score": 18,
+          "matches": [
+            "URL: api\\.github\\.com",
+            "Content: github",
+            "Content: \"current_user_url\"",
+            "Content: api\\.github\\.com"
+          ],
+          "complexity": "low",
+          "description": "GitHub API endpoints"
+        }
+      }
+    },
+    {
+      "name": "AWS Security Bulletins",
+      "url": "https://aws.amazon.com/security/security-bulletins/",
+      "detected_formats": [
+        "html_scraping",
+        "dynamic_js"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "dynamic_js": {
+          "score": 5,
+          "matches": [
+            "Content: data-.*="
+          ],
+          "complexity": "very_high",
+          "description": "Dynamic JavaScript-rendered pages"
+        }
+      }
+    },
+    {
+      "name": "GCP Security Bulletins",
+      "url": "https://cloud.google.com/security/bulletins",
+      "detected_formats": [
+        "html_scraping",
+        "dynamic_js"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "dynamic_js": {
+          "score": 15,
+          "matches": [
+            "Content: window\\[",
+            "Content: <script",
+            "Content: nonce="
+          ],
+          "complexity": "very_high",
+          "description": "Dynamic JavaScript-rendered pages"
+        }
+      }
+    },
+    {
+      "name": "Oracle Cloud Security",
+      "url": "https://www.oracle.com/security-alerts/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 20,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Oracle Database Security",
+      "url": "https://www.oracle.com/security-alerts/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 20,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "WebLogic Security",
+      "url": "https://www.oracle.com/security-alerts/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 20,
+          "matches": [
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "PostgreSQL Security",
+      "url": "https://www.postgresql.org/support/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 23,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "MySQL Security",
+      "url": "https://dev.mysql.com/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 0.3,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 3,
+          "matches": [
+            "URL: /security/"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Redis Security",
+      "url": "https://redis.io/docs/latest/operate/oss_and_stack/management/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "html_scraping_with_selectors",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      },
+      "special_notes": "Documentation site - may need CSS selectors"
+    },
+    {
+      "name": "MariaDB Security",
+      "url": "https://mariadb.org/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "MongoDB Security",
+      "url": "https://docs.mongodb.com/manual/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "html_scraping_with_selectors",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      },
+      "special_notes": "Documentation site - may need CSS selectors"
+    },
+    {
+      "name": "Cassandra Security",
+      "url": "https://cassandra.apache.org/doc/latest/cassandra/operating/security.html",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 0.3,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 3,
+          "matches": [
+            "URL: .*\\.html$"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Apache Security",
+      "url": "https://httpd.apache.org/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 23,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Nginx Security",
+      "url": "https://nginx.org/en/security_advisories.html",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 23,
+          "matches": [
+            "URL: .*\\.html$",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>",
+            "Content: <title>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Tomcat Security",
+      "url": "https://tomcat.apache.org/security.html",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: .*\\.html$",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "WebSphere Security",
+      "url": "https://www.ibm.com/support/pages/node/18271",
+      "detected_formats": [],
+      "primary_format": "unknown",
+      "complexity": "unknown",
+      "implementation_approach": "custom",
+      "confidence": 0.0,
+      "analysis_details": {}
+    },
+    {
+      "name": "HAProxy Security",
+      "url": "https://github.com/haproxy/haproxy/security/advisories",
+      "detected_formats": [
+        "html_scraping",
+        "github_api"
+      ],
+      "primary_format": "github_api",
+      "complexity": "high",
+      "implementation_approach": "github_graphql",
+      "confidence": 0.3,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 3,
+          "matches": [
+            "URL: /security/"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "github_api": {
+          "score": 3,
+          "matches": [
+            "URL: github\\.com.*security/advisories"
+          ],
+          "complexity": "low",
+          "description": "GitHub API endpoints"
+        }
+      },
+      "special_notes": "Use GitHub GraphQL API for security advisories"
+    },
+    {
+      "name": "Istio Security",
+      "url": "https://istio.io/latest/news/security/",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 0.3,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 3,
+          "matches": [
+            "URL: /security/"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "Envoy Security",
+      "url": "https://github.com/envoyproxy/envoy/security/advisories",
+      "detected_formats": [
+        "html_scraping",
+        "github_api",
+        "dynamic_js"
+      ],
+      "primary_format": "github_api",
+      "complexity": "high",
+      "implementation_approach": "github_graphql",
+      "confidence": 1.0,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 18,
+          "matches": [
+            "URL: /security/",
+            "Content: <!DOCTYPE html",
+            "Content: <html",
+            "Content: <head>"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "github_api": {
+          "score": 8,
+          "matches": [
+            "URL: github\\.com.*security/advisories",
+            "Content: github"
+          ],
+          "complexity": "low",
+          "description": "GitHub API endpoints"
+        },
+        "dynamic_js": {
+          "score": 5,
+          "matches": [
+            "Content: data-.*="
+          ],
+          "complexity": "very_high",
+          "description": "Dynamic JavaScript-rendered pages"
+        }
+      },
+      "special_notes": "Use GitHub GraphQL API for security advisories"
+    },
+    {
+      "name": "Azure Security Updates",
+      "url": "https://azure.microsoft.com/en-us/updates/?category=security",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "specialized_scraper",
+      "confidence": 0.3,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 3,
+          "matches": [
+            "URL: /updates"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      }
+    },
+    {
+      "name": "IBM Cloud Security",
+      "url": "https://cloud.ibm.com/docs/security?topic=security-security-bulletins",
+      "detected_formats": [],
+      "primary_format": "unknown",
+      "complexity": "unknown",
+      "implementation_approach": "html_scraping_with_selectors",
+      "confidence": 0.0,
+      "analysis_details": {},
+      "special_notes": "Documentation site - may need CSS selectors"
+    },
+    {
+      "name": "Rancher Security",
+      "url": "https://github.com/rancher/rancher/security/advisories",
+      "detected_formats": [
+        "html_scraping",
+        "github_api"
+      ],
+      "primary_format": "github_api",
+      "complexity": "high",
+      "implementation_approach": "github_graphql",
+      "confidence": 0.3,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 3,
+          "matches": [
+            "URL: /security/"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        },
+        "github_api": {
+          "score": 3,
+          "matches": [
+            "URL: github\\.com.*security/advisories"
+          ],
+          "complexity": "low",
+          "description": "GitHub API endpoints"
+        }
+      },
+      "special_notes": "Use GitHub GraphQL API for security advisories"
+    },
+    {
+      "name": "SQL Server Security",
+      "url": "https://docs.microsoft.com/en-us/sql/sql-server/security/sql-server-security-basics",
+      "detected_formats": [
+        "html_scraping"
+      ],
+      "primary_format": "html_scraping",
+      "complexity": "high",
+      "implementation_approach": "html_scraping_with_selectors",
+      "confidence": 0.3,
+      "analysis_details": {
+        "html_scraping": {
+          "score": 3,
+          "matches": [
+            "URL: /security/"
+          ],
+          "complexity": "high",
+          "description": "HTML pages requiring web scraping"
+        }
+      },
+      "special_notes": "Documentation site - may need CSS selectors"
+    }
+  ],
+  "implementation_recommendations": {
+    "json_api": {
+      "source_count": 2,
+      "complexity": "low",
+      "recommended_approach": "Direct HTTP requests with aiohttp + JSON parsing",
+      "estimated_effort": "Low (1-2 days)",
+      "required_libraries": [
+        "aiohttp",
+        "asyncio",
+        "json"
+      ],
+      "template_priority": "MEDIUM - Multiple sources, some reusability"
+    },
+    "html_scraping": {
+      "source_count": 29,
+      "complexity": "high",
+      "recommended_approach": "BeautifulSoup + requests for HTML parsing",
+      "estimated_effort": "Very High (2+ weeks)",
+      "required_libraries": [
+        "beautifulsoup4",
+        "requests",
+        "lxml"
+      ],
+      "template_priority": "MEDIUM - Multiple sources, some reusability"
+    },
+    "dynamic_js": {
+      "source_count": 1,
+      "complexity": "very_high",
+      "recommended_approach": "Selenium/Playwright for JavaScript rendering",
+      "estimated_effort": "Medium (3-5 days)",
+      "required_libraries": [
+        "selenium",
+        "playwright",
+        "beautifulsoup4"
+      ],
+      "template_priority": "LOW - Single source, complex implementation"
+    },
+    "github_api": {
+      "source_count": 4,
+      "complexity": "low",
+      "recommended_approach": "GitHub GraphQL API with authentication",
+      "estimated_effort": "Low (1-2 days)",
+      "required_libraries": [
+        "aiohttp",
+        "gql",
+        "graphql-core"
+      ],
+      "template_priority": "HIGH - Multiple sources, reusable template"
+    }
+  },
+  "priority_matrix": {
+    "complexity_distribution": {
+      "low": 3,
+      "high": 33,
+      "unknown": 2
+    },
+    "high_confidence_count": 28,
+    "recommended_implementation_order": [
+      {
+        "name": "NVD",
+        "format": "json_api",
+        "complexity": "low",
+        "confidence": 1.0
+      },
+      {
+        "name": "GitHub Security Advisories",
+        "format": "github_api",
+        "complexity": "low",
+        "confidence": 1.0
+      },
+      {
+        "name": "npm Security Advisories",
+        "format": "json_api",
+        "complexity": "low",
+        "confidence": 0.8
+      },
+      {
+        "name": "Debian Security Tracker",
+        "format": "html_scraping",
+        "complexity": "high",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ubuntu Security Notices",
+        "format": "html_scraping",
+        "complexity": "high",
+        "confidence": 1.0
+      },
+      {
+        "name": "Red Hat Security Advisories",
+        "format": "html_scraping",
+        "complexity": "high",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amazon Linux Security",
+        "format": "html_scraping",
+        "complexity": "high",
+        "confidence": 1.0
+      },
+      {
+        "name": "SUSE Security",
+        "format": "html_scraping",
+        "complexity": "high",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oracle Linux Security",
+        "format": "html_scraping",
+        "complexity": "high",
+        "confidence": 1.0
+      },
+      {
+        "name": "Windows Security Updates",
+        "format": "dynamic_js",
+        "complexity": "high",
+        "confidence": 1.0
+      }
+    ]
+  }
+}

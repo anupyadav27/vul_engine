@@ -1,0 +1,25 @@
+{
+  "engine_url": "http://localhost:8000",
+  "api_key": "your-secret-api-key",
+  "scan_interval": 3600,
+  "include_packages": true,
+  "include_services": true,
+  "include_ports": false,
+  "offline_mode": false,
+  "log_level": "INFO",
+  "analysis_mode": "hybrid",
+  "local_analysis": {
+    "enabled": true,
+    "vuln_db_cache": true,
+    "cache_update_interval": 86400,
+    "severity_threshold": "MEDIUM",
+    "max_cache_size_mb": 100
+  },
+  "enhanced_discovery": {
+    "language_packages": true,
+    "system_libraries": true,
+    "applications": true,
+    "max_libraries": 50,
+    "timeout": 30
+  }
+}

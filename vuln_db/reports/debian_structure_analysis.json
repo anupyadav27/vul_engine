@@ -1,0 +1,2567 @@
+{
+  "source_name": "debian_security_tracker",
+  "total_records": 264,
+  "total_packages": 50,
+  "total_cves": 263,
+  "analysis_timestamp": "2025-08-31T13:03:04.890633",
+  "debian_releases": [
+    "sid",
+    "trixie",
+    "bookworm",
+    "bullseye",
+    "forky"
+  ],
+  "summary": {
+    "total_fields": 51,
+    "required_fields": 51,
+    "nested_fields": 44,
+    "debian_specific_fields": 24,
+    "data_types_found": [
+      "str",
+      "int",
+      "dict",
+      "bool"
+    ]
+  },
+  "fields": {
+    "description": {
+      "field_name": "description",
+      "field_path": "description",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "The acllas__handle_group_entry function in servers/plugins/acl/acllas.c in 389 Directory Server before 1.2.10 does not properly handled access control instructions (ACIs) that use certificate groups, which allows remote authenticated LDAP users with a certificate group to cause a denial of service (infinite loop and CPU consumption) by binding to the server.",
+        "389 Directory Server before 1.2.11.6 (aka Red Hat Directory Server before 8.2.10-3), after the password for a LDAP user has been changed and before the server has been reset, allows remote attackers to read the plaintext password via the unhashed#user#password attribute.",
+        "389 Directory Server before 1.2.11.6 (aka Red Hat Directory Server before 8.2.10-3), when the password of a LDAP user has been changed and audit logging is enabled, saves the new password to the log in plain text, which allows remote authenticated users to read the password.",
+        "389 Directory Server 1.2.10 does not properly update the ACL when a DN entry is moved by a modrdn operation, which allows remote authenticated users with certain permissions to bypass ACL restrictions and access the DN entry.",
+        "389 Directory Server before 1.3.0.4 allows remote attackers to cause a denial of service (crash) via a zero length LDAP control sequence.",
+        "The ipapwd_chpwop function in daemons/ipa-slapi-plugins/ipa-pwd-extop/ipa_pwd_extop.c in the directory server (dirsrv) in FreeIPA before 3.2.0 allows remote attackers to cause a denial of service (crash) via a connection request without a username/dn, related to the 389 directory server.",
+        "The do_search function in ldap/servers/slapd/search.c in 389 Directory Server 1.2.x before 1.2.11.20 and 1.3.x before 1.3.0.5 does not properly restrict access to entries when the nsslapd-allow-anonymous-access configuration is set to rootdse and the BASE search scope is used, which allows remote attackers to obtain sensitive information outside of the rootDSE via a crafted LDAP search.",
+        "The Red Hat Directory Server before 8.2.11-13 and 389 Directory Server do not properly restrict access to entity attributes, which allows remote authenticated users to obtain sensitive information via a search query for the attribute.",
+        "ns-slapd in 389 Directory Server before 1.3.0.8 allows remote attackers to cause a denial of service (server crash) via a crafted Distinguished Name (DN) in a MOD operation request.",
+        "389 Directory Server 1.2.11.15 (aka Red Hat Directory Server before 8.2.11-14) allows remote authenticated users to cause a denial of service (crash) via multiple @ characters in a GER attribute list in a search request."
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": false
+    },
+    "scope": {
+      "field_name": "scope",
+      "field_path": "scope",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 1,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": false
+    },
+    "releases": {
+      "field_name": "releases",
+      "field_path": "releases",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": false
+    },
+    "releases.bookworm": {
+      "field_name": "bookworm",
+      "field_path": "releases.bookworm",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.status": {
+      "field_name": "status",
+      "field_path": "releases.bookworm.status",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [
+        "debian_status",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.repositories": {
+      "field_name": "repositories",
+      "field_path": "releases.bookworm.repositories",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.repositories.bookworm": {
+      "field_name": "bookworm",
+      "field_path": "releases.bookworm.repositories.bookworm",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1",
+        "2.3.1+dfsg1-1+deb12u1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 44,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.fixed_version": {
+      "field_name": "fixed_version",
+      "field_path": "releases.bookworm.fixed_version",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "0",
+        "0",
+        "0",
+        "1.2.11.15-1",
+        "1.3.0.3-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.urgency": {
+      "field_name": "urgency",
+      "field_path": "releases.bookworm.urgency",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "unimportant",
+        "unimportant",
+        "unimportant",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 4,
+      "value_patterns": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye": {
+      "field_name": "bullseye",
+      "field_path": "releases.bullseye",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye.status": {
+      "field_name": "status",
+      "field_path": "releases.bullseye.status",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [
+        "debian_status",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye.repositories": {
+      "field_name": "repositories",
+      "field_path": "releases.bullseye.repositories",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye.repositories.bullseye": {
+      "field_name": "bullseye",
+      "field_path": "releases.bullseye.repositories.bullseye",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2",
+        "1.4.4.11-2"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 43,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye.repositories.bullseye-security": {
+      "field_name": "bullseye-security",
+      "field_path": "releases.bullseye.repositories.bullseye-security",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1",
+        "1.4.4.11-2+deb11u1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 6,
+      "value_patterns": [
+        "debian_version",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye.fixed_version": {
+      "field_name": "fixed_version",
+      "field_path": "releases.bullseye.fixed_version",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "0",
+        "0",
+        "0",
+        "1.2.11.15-1",
+        "1.3.0.3-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye.urgency": {
+      "field_name": "urgency",
+      "field_path": "releases.bullseye.urgency",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "unimportant",
+        "unimportant",
+        "unimportant",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 4,
+      "value_patterns": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.forky": {
+      "field_name": "forky",
+      "field_path": "releases.forky",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.forky.status": {
+      "field_name": "status",
+      "field_path": "releases.forky.status",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [
+        "debian_status",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.forky.repositories": {
+      "field_name": "repositories",
+      "field_path": "releases.forky.repositories",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.forky.repositories.forky": {
+      "field_name": "forky",
+      "field_path": "releases.forky.repositories.forky",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 47,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.forky.fixed_version": {
+      "field_name": "fixed_version",
+      "field_path": "releases.forky.fixed_version",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "0",
+        "0",
+        "0",
+        "1.2.11.15-1",
+        "1.3.0.3-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.forky.urgency": {
+      "field_name": "urgency",
+      "field_path": "releases.forky.urgency",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "unimportant",
+        "unimportant",
+        "unimportant",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 4,
+      "value_patterns": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.sid": {
+      "field_name": "sid",
+      "field_path": "releases.sid",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.sid.status": {
+      "field_name": "status",
+      "field_path": "releases.sid.status",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [
+        "debian_status",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.sid.repositories": {
+      "field_name": "repositories",
+      "field_path": "releases.sid.repositories",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.sid.repositories.sid": {
+      "field_name": "sid",
+      "field_path": "releases.sid.repositories.sid",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 48,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.sid.fixed_version": {
+      "field_name": "fixed_version",
+      "field_path": "releases.sid.fixed_version",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "0",
+        "0",
+        "0",
+        "1.2.11.15-1",
+        "1.3.0.3-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.sid.urgency": {
+      "field_name": "urgency",
+      "field_path": "releases.sid.urgency",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "unimportant",
+        "unimportant",
+        "unimportant",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 4,
+      "value_patterns": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie": {
+      "field_name": "trixie",
+      "field_path": "releases.trixie",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.status": {
+      "field_name": "status",
+      "field_path": "releases.trixie.status",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved",
+        "resolved"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [
+        "debian_status",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.repositories": {
+      "field_name": "repositories",
+      "field_path": "releases.trixie.repositories",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.repositories.trixie": {
+      "field_name": "trixie",
+      "field_path": "releases.trixie.repositories.trixie",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1",
+        "3.1.2+dfsg1-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 47,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.fixed_version": {
+      "field_name": "fixed_version",
+      "field_path": "releases.trixie.fixed_version",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "0",
+        "0",
+        "0",
+        "1.2.11.15-1",
+        "1.3.0.3-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1",
+        "1.3.2.9-1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [
+        "debian_version"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.urgency": {
+      "field_name": "urgency",
+      "field_path": "releases.trixie.urgency",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "unimportant",
+        "unimportant",
+        "unimportant",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned",
+        "not yet assigned"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 4,
+      "value_patterns": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "cve_id": {
+      "field_name": "cve_id",
+      "field_path": "cve_id",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "CVE-2012-0833",
+        "CVE-2012-2678",
+        "CVE-2012-2746",
+        "CVE-2012-4450",
+        "CVE-2013-0312",
+        "CVE-2013-0336",
+        "CVE-2013-1897",
+        "CVE-2013-2219",
+        "CVE-2013-4283",
+        "CVE-2013-4485"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [
+        "cve_id"
+      ],
+      "is_required": true,
+      "is_nested": false
+    },
+    "package_name": {
+      "field_name": "package_name",
+      "field_path": "package_name",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 49,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": false
+    },
+    "_debian_metadata": {
+      "field_name": "_debian_metadata",
+      "field_path": "_debian_metadata",
+      "data_types": [
+        "dict"
+      ],
+      "sample_values": [],
+      "null_percentage": 0.0,
+      "unique_values_count": 0,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": false
+    },
+    "_debian_metadata.source_package": {
+      "field_name": "source_package",
+      "field_path": "_debian_metadata.source_package",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base",
+        "389-ds-base"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 49,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "_debian_metadata.total_releases": {
+      "field_name": "total_releases",
+      "field_path": "_debian_metadata.total_releases",
+      "data_types": [
+        "int"
+      ],
+      "sample_values": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 5,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "_debian_metadata.has_debianbug": {
+      "field_name": "has_debianbug",
+      "field_path": "_debian_metadata.has_debianbug",
+      "data_types": [
+        "bool"
+      ],
+      "sample_values": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "_debian_metadata.scope": {
+      "field_name": "scope",
+      "field_path": "_debian_metadata.scope",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local",
+        "local"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 1,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "debianbug": {
+      "field_name": "debianbug",
+      "field_path": "debianbug",
+      "data_types": [
+        "int"
+      ],
+      "sample_values": [
+        688942,
+        704077,
+        704421,
+        718325,
+        721222,
+        730115,
+        741600,
+        757437,
+        779909,
+        779909
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 100,
+      "value_patterns": [
+        "debian_bug_id"
+      ],
+      "is_required": true,
+      "is_nested": false
+    },
+    "releases.bullseye.nodsa": {
+      "field_name": "nodsa",
+      "field_path": "releases.bullseye.nodsa",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "Minor issue, too intrusive to backport",
+        "Minor issue",
+        "Minor issue",
+        "Minor issue, DoS",
+        "need priviligied user; DoS",
+        "Minor issue",
+        "Minor issue",
+        "Minor issue; can be fixed via point release",
+        "Minor issue",
+        "Minor issue"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 5,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bullseye.nodsa_reason": {
+      "field_name": "nodsa_reason",
+      "field_path": "releases.bullseye.nodsa_reason",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "ignored",
+        "",
+        "",
+        "postponed",
+        "postponed",
+        "",
+        "ignored",
+        "",
+        "",
+        ""
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 3,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.nodsa": {
+      "field_name": "nodsa",
+      "field_path": "releases.bookworm.nodsa",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "Minor issue",
+        "Minor issue",
+        "Minor issue",
+        "Minor issue; will be fixed via point release",
+        "Minor issue; will be fixed via point release",
+        "Minor issue",
+        "Minor issue",
+        "Minor issue",
+        "Minor issue",
+        "Minor issue in Debian context; AMD-SEV not supported"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 3,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.nodsa_reason": {
+      "field_name": "nodsa_reason",
+      "field_path": "releases.bookworm.nodsa_reason",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ignored",
+        ""
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.nodsa": {
+      "field_name": "nodsa",
+      "field_path": "releases.trixie.nodsa",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "Minor issue",
+        "Minor issue"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 1,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.nodsa_reason": {
+      "field_name": "nodsa_reason",
+      "field_path": "releases.trixie.nodsa_reason",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "",
+        "ignored"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 2,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.repositories.bookworm-security": {
+      "field_name": "bookworm-security",
+      "field_path": "releases.bookworm.repositories.bookworm-security",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1",
+        "5.17.2+dfsg-2+deb12u1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 3,
+      "value_patterns": [
+        "debian_version",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.trixie.repositories.trixie-security": {
+      "field_name": "trixie-security",
+      "field_path": "releases.trixie.repositories.trixie-security",
+      "data_types": [
+        "str"
+      ],
+      "sample_values": [
+        "0.19.1-2+deb13u1",
+        "0.19.1-2+deb13u1",
+        "0.19.1-2+deb13u1",
+        "0.19.1-2+deb13u1"
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 1,
+      "value_patterns": [
+        "debian_version",
+        "enumerated"
+      ],
+      "is_required": true,
+      "is_nested": true
+    },
+    "releases.bookworm.next_point_update": {
+      "field_name": "next_point_update",
+      "field_path": "releases.bookworm.next_point_update",
+      "data_types": [
+        "bool"
+      ],
+      "sample_values": [
+        true
+      ],
+      "null_percentage": 0.0,
+      "unique_values_count": 1,
+      "value_patterns": [],
+      "is_required": true,
+      "is_nested": true
+    }
+  },
+  "nested_structures": {
+    "releases": [
+      "bookworm",
+      "bookworm.repositories",
+      "bullseye",
+      "bullseye.repositories",
+      "forky",
+      "forky.repositories",
+      "sid",
+      "sid.repositories",
+      "trixie",
+      "trixie.repositories"
+    ]
+  },
+  "data_patterns": {
+    "nested_structures": {
+      "releases": [
+        "bookworm",
+        "bookworm.repositories",
+        "bullseye",
+        "bullseye.repositories",
+        "forky",
+        "forky.repositories",
+        "sid",
+        "sid.repositories",
+        "trixie",
+        "trixie.repositories"
+      ]
+    },
+    "debian_specific": {
+      "has_releases_structure": true,
+      "has_debianbug_field": true,
+      "has_scope_field": true,
+      "has_repositories": true
+    },
+    "data_quality": {
+      "total_fields": 51,
+      "required_fields": 51,
+      "optional_fields": 0,
+      "completeness_ratio": 1.0
+    },
+    "common_structures": [
+      "vulnerability_data"
+    ]
+  },
+  "package_patterns": {
+    "total_packages": 49,
+    "most_vulnerable_packages": {
+      "389-ds-base": 53,
+      "activemq": 31,
+      "amd64-microcode": 13,
+      "advancecomp": 12,
+      "alpine": 12,
+      "7zip": 11,
+      "abcm2ps": 10,
+      "adplug": 10,
+      "accountsservice": 9,
+      "adns": 9
+    },
+    "average_cves_per_package": 5.387755102040816,
+    "package_distribution": {
+      "389-ds-base": 53,
+      "7zip": 11,
+      "7zip-rar": 1,
+      "9base": 1,
+      "a2ps": 5,
+      "aardvark-dns": 1,
+      "abcm2ps": 10,
+      "abcmidi": 2,
+      "abiword": 5,
+      "abseil": 1,
+      "accountsservice": 9,
+      "ace": 1,
+      "acl": 1,
+      "acm": 1,
+      "acme.sh": 1,
+      "acpi-support": 2,
+      "acpica-unix": 4,
+      "acpid": 6,
+      "activemq": 31,
+      "adequate": 1,
+      "admesh": 1,
+      "adminer": 8,
+      "adns": 9,
+      "adplug": 10,
+      "advancecomp": 12,
+      "advi": 3,
+      "aerc": 1,
+      "afflib": 1,
+      "aflplusplus": 1,
+      "afuse": 1,
+      "agg": 1,
+      "aide": 4,
+      "aircrack-ng": 6,
+      "alien-arena": 4,
+      "allegro4.4": 1,
+      "allegro5": 1,
+      "almanah": 1,
+      "alpine": 12,
+      "alsa-lib": 1,
+      "alsaplayer": 3,
+      "altermime": 1,
+      "amanda": 7,
+      "amarok": 6,
+      "amavisd-new": 1,
+      "amd64-microcode": 13,
+      "amule": 4,
+      "analog": 1,
+      "android-framework-23": 2,
+      "android-platform-dalvik": 1
+    }
+  },
+  "recommendations": [
+    "Process 5 Debian releases: sid, trixie, bookworm, bullseye, forky",
+    "Include Debian bug tracking integration",
+    "Handle Debian repository information (main, security, updates)",
+    "Focus on 51 required fields for Debian parsing",
+    "Implement Debian-specific field validation and normalization"
+  ],
+  "parser_suggestions": {
+    "required_fields": [
+      {
+        "name": "description",
+        "path": "description",
+        "types": [
+          "str"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "scope",
+        "path": "scope",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "releases",
+        "path": "releases",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "bookworm",
+        "path": "releases.bookworm",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "status",
+        "path": "releases.bookworm.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "repositories",
+        "path": "releases.bookworm.repositories",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "bookworm",
+        "path": "releases.bookworm.repositories.bookworm",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.bookworm.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.bookworm.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "bullseye",
+        "path": "releases.bullseye",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "status",
+        "path": "releases.bullseye.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "repositories",
+        "path": "releases.bullseye.repositories",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "bullseye",
+        "path": "releases.bullseye.repositories.bullseye",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "bullseye-security",
+        "path": "releases.bullseye.repositories.bullseye-security",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.bullseye.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.bullseye.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "forky",
+        "path": "releases.forky",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "status",
+        "path": "releases.forky.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "repositories",
+        "path": "releases.forky.repositories",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "forky",
+        "path": "releases.forky.repositories.forky",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.forky.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.forky.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "sid",
+        "path": "releases.sid",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "status",
+        "path": "releases.sid.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "repositories",
+        "path": "releases.sid.repositories",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "sid",
+        "path": "releases.sid.repositories.sid",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.sid.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.sid.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "trixie",
+        "path": "releases.trixie",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "status",
+        "path": "releases.trixie.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "repositories",
+        "path": "releases.trixie.repositories",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "trixie",
+        "path": "releases.trixie.repositories.trixie",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.trixie.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.trixie.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "cve_id",
+        "path": "cve_id",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "cve_id"
+        ]
+      },
+      {
+        "name": "package_name",
+        "path": "package_name",
+        "types": [
+          "str"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "_debian_metadata",
+        "path": "_debian_metadata",
+        "types": [
+          "dict"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "source_package",
+        "path": "_debian_metadata.source_package",
+        "types": [
+          "str"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "total_releases",
+        "path": "_debian_metadata.total_releases",
+        "types": [
+          "int"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "has_debianbug",
+        "path": "_debian_metadata.has_debianbug",
+        "types": [
+          "bool"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "scope",
+        "path": "_debian_metadata.scope",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "debianbug",
+        "path": "debianbug",
+        "types": [
+          "int"
+        ],
+        "patterns": [
+          "debian_bug_id"
+        ]
+      },
+      {
+        "name": "nodsa",
+        "path": "releases.bullseye.nodsa",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "nodsa_reason",
+        "path": "releases.bullseye.nodsa_reason",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "nodsa",
+        "path": "releases.bookworm.nodsa",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "nodsa_reason",
+        "path": "releases.bookworm.nodsa_reason",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "enumerated"
+        ]
+      },
+      {
+        "name": "nodsa",
+        "path": "releases.trixie.nodsa",
+        "types": [
+          "str"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "nodsa_reason",
+        "path": "releases.trixie.nodsa_reason",
+        "types": [
+          "str"
+        ],
+        "patterns": []
+      },
+      {
+        "name": "bookworm-security",
+        "path": "releases.bookworm.repositories.bookworm-security",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "trixie-security",
+        "path": "releases.trixie.repositories.trixie-security",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "next_point_update",
+        "path": "releases.bookworm.next_point_update",
+        "types": [
+          "bool"
+        ],
+        "patterns": []
+      }
+    ],
+    "optional_fields": [],
+    "debian_specific_fields": [
+      {
+        "name": "status",
+        "path": "releases.bookworm.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "bookworm",
+        "path": "releases.bookworm.repositories.bookworm",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.bookworm.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.bookworm.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "status",
+        "path": "releases.bullseye.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "bullseye",
+        "path": "releases.bullseye.repositories.bullseye",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "bullseye-security",
+        "path": "releases.bullseye.repositories.bullseye-security",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.bullseye.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.bullseye.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "status",
+        "path": "releases.forky.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "forky",
+        "path": "releases.forky.repositories.forky",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.forky.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.forky.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "status",
+        "path": "releases.sid.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "sid",
+        "path": "releases.sid.repositories.sid",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.sid.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.sid.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "status",
+        "path": "releases.trixie.status",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_status",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "trixie",
+        "path": "releases.trixie.repositories.trixie",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "fixed_version",
+        "path": "releases.trixie.fixed_version",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version"
+        ]
+      },
+      {
+        "name": "urgency",
+        "path": "releases.trixie.urgency",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_urgency",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "debianbug",
+        "path": "debianbug",
+        "types": [
+          "int"
+        ],
+        "patterns": [
+          "debian_bug_id"
+        ]
+      },
+      {
+        "name": "bookworm-security",
+        "path": "releases.bookworm.repositories.bookworm-security",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version",
+          "enumerated"
+        ]
+      },
+      {
+        "name": "trixie-security",
+        "path": "releases.trixie.repositories.trixie-security",
+        "types": [
+          "str"
+        ],
+        "patterns": [
+          "debian_version",
+          "enumerated"
+        ]
+      }
+    ],
+    "field_mappings": {
+      "description": {
+        "source_field": "description",
+        "target_field": "description",
+        "required": true,
+        "data_type": "str"
+      },
+      "scope": {
+        "source_field": "scope",
+        "target_field": "scope",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "local"
+        ]
+      },
+      "releases": {
+        "source_field": "releases",
+        "target_field": "releases",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.bookworm": {
+        "source_field": "releases.bookworm",
+        "target_field": "bookworm",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.bookworm.status": {
+        "source_field": "releases.bookworm.status",
+        "target_field": "status",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_status",
+        "validation": "validate_debian_status"
+      },
+      "releases.bookworm.repositories": {
+        "source_field": "releases.bookworm.repositories",
+        "target_field": "repositories",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.bookworm.repositories.bookworm": {
+        "source_field": "releases.bookworm.repositories.bookworm",
+        "target_field": "bookworm",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.bookworm.fixed_version": {
+        "source_field": "releases.bookworm.fixed_version",
+        "target_field": "fixed_version",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.bookworm.urgency": {
+        "source_field": "releases.bookworm.urgency",
+        "target_field": "urgency",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_urgency",
+        "validation": "validate_debian_urgency"
+      },
+      "releases.bullseye": {
+        "source_field": "releases.bullseye",
+        "target_field": "bullseye",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.bullseye.status": {
+        "source_field": "releases.bullseye.status",
+        "target_field": "status",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_status",
+        "validation": "validate_debian_status"
+      },
+      "releases.bullseye.repositories": {
+        "source_field": "releases.bullseye.repositories",
+        "target_field": "repositories",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.bullseye.repositories.bullseye": {
+        "source_field": "releases.bullseye.repositories.bullseye",
+        "target_field": "bullseye",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.bullseye.repositories.bullseye-security": {
+        "source_field": "releases.bullseye.repositories.bullseye-security",
+        "target_field": "bullseye-security",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.bullseye.fixed_version": {
+        "source_field": "releases.bullseye.fixed_version",
+        "target_field": "fixed_version",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.bullseye.urgency": {
+        "source_field": "releases.bullseye.urgency",
+        "target_field": "urgency",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_urgency",
+        "validation": "validate_debian_urgency"
+      },
+      "releases.forky": {
+        "source_field": "releases.forky",
+        "target_field": "forky",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.forky.status": {
+        "source_field": "releases.forky.status",
+        "target_field": "status",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_status",
+        "validation": "validate_debian_status"
+      },
+      "releases.forky.repositories": {
+        "source_field": "releases.forky.repositories",
+        "target_field": "repositories",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.forky.repositories.forky": {
+        "source_field": "releases.forky.repositories.forky",
+        "target_field": "forky",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.forky.fixed_version": {
+        "source_field": "releases.forky.fixed_version",
+        "target_field": "fixed_version",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.forky.urgency": {
+        "source_field": "releases.forky.urgency",
+        "target_field": "urgency",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_urgency",
+        "validation": "validate_debian_urgency"
+      },
+      "releases.sid": {
+        "source_field": "releases.sid",
+        "target_field": "sid",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.sid.status": {
+        "source_field": "releases.sid.status",
+        "target_field": "status",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_status",
+        "validation": "validate_debian_status"
+      },
+      "releases.sid.repositories": {
+        "source_field": "releases.sid.repositories",
+        "target_field": "repositories",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.sid.repositories.sid": {
+        "source_field": "releases.sid.repositories.sid",
+        "target_field": "sid",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.sid.fixed_version": {
+        "source_field": "releases.sid.fixed_version",
+        "target_field": "fixed_version",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.sid.urgency": {
+        "source_field": "releases.sid.urgency",
+        "target_field": "urgency",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_urgency",
+        "validation": "validate_debian_urgency"
+      },
+      "releases.trixie": {
+        "source_field": "releases.trixie",
+        "target_field": "trixie",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.trixie.status": {
+        "source_field": "releases.trixie.status",
+        "target_field": "status",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_status",
+        "validation": "validate_debian_status"
+      },
+      "releases.trixie.repositories": {
+        "source_field": "releases.trixie.repositories",
+        "target_field": "repositories",
+        "required": true,
+        "data_type": "dict"
+      },
+      "releases.trixie.repositories.trixie": {
+        "source_field": "releases.trixie.repositories.trixie",
+        "target_field": "trixie",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.trixie.fixed_version": {
+        "source_field": "releases.trixie.fixed_version",
+        "target_field": "fixed_version",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.trixie.urgency": {
+        "source_field": "releases.trixie.urgency",
+        "target_field": "urgency",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_debian_urgency",
+        "validation": "validate_debian_urgency"
+      },
+      "cve_id": {
+        "source_field": "cve_id",
+        "target_field": "cve_id",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_cve_id",
+        "validation": "validate_cve_format"
+      },
+      "package_name": {
+        "source_field": "package_name",
+        "target_field": "package_name",
+        "required": true,
+        "data_type": "str"
+      },
+      "_debian_metadata": {
+        "source_field": "_debian_metadata",
+        "target_field": "_debian_metadata",
+        "required": true,
+        "data_type": "dict"
+      },
+      "_debian_metadata.source_package": {
+        "source_field": "_debian_metadata.source_package",
+        "target_field": "source_package",
+        "required": true,
+        "data_type": "str"
+      },
+      "_debian_metadata.total_releases": {
+        "source_field": "_debian_metadata.total_releases",
+        "target_field": "total_releases",
+        "required": true,
+        "data_type": "int",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "1",
+          "4",
+          "3",
+          "5",
+          "2"
+        ]
+      },
+      "_debian_metadata.has_debianbug": {
+        "source_field": "_debian_metadata.has_debianbug",
+        "target_field": "has_debianbug",
+        "required": true,
+        "data_type": "bool",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "True",
+          "False"
+        ]
+      },
+      "_debian_metadata.scope": {
+        "source_field": "_debian_metadata.scope",
+        "target_field": "scope",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "local"
+        ]
+      },
+      "debianbug": {
+        "source_field": "debianbug",
+        "target_field": "debianbug",
+        "required": true,
+        "data_type": "int",
+        "parser_function": "normalize_debian_bug_id",
+        "validation": "validate_debian_bug_id"
+      },
+      "releases.bullseye.nodsa": {
+        "source_field": "releases.bullseye.nodsa",
+        "target_field": "nodsa",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "Minor issue, DoS",
+          "Minor issue, too intrusive to backport",
+          "Minor issue; can be fixed via point release",
+          "Minor issue",
+          "need priviligied user; DoS"
+        ]
+      },
+      "releases.bullseye.nodsa_reason": {
+        "source_field": "releases.bullseye.nodsa_reason",
+        "target_field": "nodsa_reason",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "",
+          "postponed",
+          "ignored"
+        ]
+      },
+      "releases.bookworm.nodsa": {
+        "source_field": "releases.bookworm.nodsa",
+        "target_field": "nodsa",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "Minor issue; will be fixed via point release",
+          "Minor issue in Debian context; AMD-SEV not supported",
+          "Minor issue"
+        ]
+      },
+      "releases.bookworm.nodsa_reason": {
+        "source_field": "releases.bookworm.nodsa_reason",
+        "target_field": "nodsa_reason",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "normalize_enum_value",
+        "allowed_values": [
+          "",
+          "ignored"
+        ]
+      },
+      "releases.trixie.nodsa": {
+        "source_field": "releases.trixie.nodsa",
+        "target_field": "nodsa",
+        "required": true,
+        "data_type": "str"
+      },
+      "releases.trixie.nodsa_reason": {
+        "source_field": "releases.trixie.nodsa_reason",
+        "target_field": "nodsa_reason",
+        "required": true,
+        "data_type": "str"
+      },
+      "releases.bookworm.repositories.bookworm-security": {
+        "source_field": "releases.bookworm.repositories.bookworm-security",
+        "target_field": "bookworm-security",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.trixie.repositories.trixie-security": {
+        "source_field": "releases.trixie.repositories.trixie-security",
+        "target_field": "trixie-security",
+        "required": true,
+        "data_type": "str",
+        "parser_function": "parse_debian_version",
+        "validation": "validate_debian_version"
+      },
+      "releases.bookworm.next_point_update": {
+        "source_field": "releases.bookworm.next_point_update",
+        "target_field": "next_point_update",
+        "required": true,
+        "data_type": "bool"
+      }
+    },
+    "validation_rules": {
+      "scope": [
+        "enumerated"
+      ],
+      "releases.bookworm.status": [
+        "debian_status",
+        "enumerated"
+      ],
+      "releases.bookworm.repositories.bookworm": [
+        "debian_version"
+      ],
+      "releases.bookworm.fixed_version": [
+        "debian_version"
+      ],
+      "releases.bookworm.urgency": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "releases.bullseye.status": [
+        "debian_status",
+        "enumerated"
+      ],
+      "releases.bullseye.repositories.bullseye": [
+        "debian_version"
+      ],
+      "releases.bullseye.repositories.bullseye-security": [
+        "debian_version",
+        "enumerated"
+      ],
+      "releases.bullseye.fixed_version": [
+        "debian_version"
+      ],
+      "releases.bullseye.urgency": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "releases.forky.status": [
+        "debian_status",
+        "enumerated"
+      ],
+      "releases.forky.repositories.forky": [
+        "debian_version"
+      ],
+      "releases.forky.fixed_version": [
+        "debian_version"
+      ],
+      "releases.forky.urgency": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "releases.sid.status": [
+        "debian_status",
+        "enumerated"
+      ],
+      "releases.sid.repositories.sid": [
+        "debian_version"
+      ],
+      "releases.sid.fixed_version": [
+        "debian_version"
+      ],
+      "releases.sid.urgency": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "releases.trixie.status": [
+        "debian_status",
+        "enumerated"
+      ],
+      "releases.trixie.repositories.trixie": [
+        "debian_version"
+      ],
+      "releases.trixie.fixed_version": [
+        "debian_version"
+      ],
+      "releases.trixie.urgency": [
+        "debian_urgency",
+        "enumerated"
+      ],
+      "cve_id": [
+        "cve_id"
+      ],
+      "_debian_metadata.total_releases": [
+        "enumerated"
+      ],
+      "_debian_metadata.has_debianbug": [
+        "enumerated"
+      ],
+      "_debian_metadata.scope": [
+        "enumerated"
+      ],
+      "debianbug": [
+        "debian_bug_id"
+      ],
+      "releases.bullseye.nodsa": [
+        "enumerated"
+      ],
+      "releases.bullseye.nodsa_reason": [
+        "enumerated"
+      ],
+      "releases.bookworm.nodsa": [
+        "enumerated"
+      ],
+      "releases.bookworm.nodsa_reason": [
+        "enumerated"
+      ],
+      "releases.bookworm.repositories.bookworm-security": [
+        "debian_version",
+        "enumerated"
+      ],
+      "releases.trixie.repositories.trixie-security": [
+        "debian_version",
+        "enumerated"
+      ]
+    },
+    "transformation_functions": [
+      "process_debian_releases",
+      "determine_debian_package_status",
+      "normalize_debian_bug_id",
+      "normalize_cve_id",
+      "parse_debian_urgency",
+      "validate_debian_version"
+    ],
+    "debian_releases": [
+      "sid",
+      "trixie",
+      "bookworm",
+      "bullseye",
+      "forky"
+    ]
+  }
+}

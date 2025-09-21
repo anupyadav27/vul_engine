@@ -1,0 +1,13 @@
+{
+  "source_name": "nvd",
+  "start_time": "2025-09-02T14:01:31.600869+00:00",
+  "end_time": "2025-09-02T14:01:37.829306+00:00",
+  "duration_seconds": 6.228437,
+  "files_downloaded": 1,
+  "incremental_cves_found": 652,
+  "successfully_uploaded": 652,
+  "failed_upload": 0,
+  "previous_latest_cve": "CVE-2025-9664",
+  "new_latest_cve": "CVE-2025-58421",
+  "status": "success"
+}

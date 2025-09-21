@@ -1,0 +1,1827 @@
+{
+  "agent_id": "53ea44d086d9314a",
+  "timestamp": "2025-08-30T17:10:30.309574",
+  "system_info": {
+    "hostname": "6343f623b92f",
+    "platform": "Linux-6.10.14-linuxkit-x86_64-with-glibc2.35",
+    "architecture": [
+      "64bit",
+      ""
+    ],
+    "processor": "x86_64",
+    "python_version": "3.10.12",
+    "agent_version": "1.0.0"
+  },
+  "packages": [
+    {
+      "name": "adduser",
+      "version": "3.118ubuntu5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "apt",
+      "version": "2.4.14",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "base-files",
+      "version": "12ubuntu4.7",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "base-passwd",
+      "version": "3.5.52build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "bash",
+      "version": "5.1-6ubuntu1.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "binutils",
+      "version": "2.38-4ubuntu2.8",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "binutils-common:amd64",
+      "version": "2.38-4ubuntu2.8",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "binutils-x86-64-linux-gnu",
+      "version": "2.38-4ubuntu2.8",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "bsdutils",
+      "version": "1:2.37.2-4ubuntu3.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "build-essential",
+      "version": "12.9ubuntu3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "bzip2",
+      "version": "1.0.8-5build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "ca-certificates",
+      "version": "20240203~22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "coreutils",
+      "version": "8.32-4.1ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "cpp",
+      "version": "4:11.2.0-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "cpp-11",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "curl",
+      "version": "7.81.0-1ubuntu1.20",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "dash",
+      "version": "0.5.11+git20210903+057cd650a4ed-3build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "debconf",
+      "version": "1.5.79ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "debianutils",
+      "version": "5.5-1ubuntu2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "diffutils",
+      "version": "1:3.8-0ubuntu2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "dirmngr",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "dpkg",
+      "version": "1.21.1ubuntu2.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "dpkg-dev",
+      "version": "1.21.1ubuntu2.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "e2fsprogs",
+      "version": "1.46.5-2ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "fakeroot",
+      "version": "1.28-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "findutils",
+      "version": "4.8.0-1ubuntu3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "fontconfig-config",
+      "version": "2.13.1-4.2ubuntu5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "fonts-dejavu-core",
+      "version": "2.37-2build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "g++",
+      "version": "4:11.2.0-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "g++-11",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gcc",
+      "version": "4:11.2.0-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gcc-11",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gcc-11-base:amd64",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gcc-12-base:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gnupg",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gnupg-l10n",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gnupg-utils",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gpg",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gpg-agent",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gpg-wks-client",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gpg-wks-server",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gpgconf",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gpgsm",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gpgv",
+      "version": "2.2.27-3ubuntu2.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "grep",
+      "version": "3.7-1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "gzip",
+      "version": "1.10-4ubuntu4.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "hostname",
+      "version": "3.23ubuntu2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "init-system-helpers",
+      "version": "1.62",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "javascript-common",
+      "version": "11+nmu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libacl1:amd64",
+      "version": "2.3.1-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libalgorithm-diff-perl",
+      "version": "1.201-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libalgorithm-diff-xs-perl",
+      "version": "0.04-6build3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libalgorithm-merge-perl",
+      "version": "0.08-3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libapt-pkg6.0:amd64",
+      "version": "2.4.14",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libasan6:amd64",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libassuan0:amd64",
+      "version": "2.5.5-1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libatomic1:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libattr1:amd64",
+      "version": "1:2.5.1-1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libaudit-common",
+      "version": "1:3.0.7-1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libaudit1:amd64",
+      "version": "1:3.0.7-1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libbinutils:amd64",
+      "version": "2.38-4ubuntu2.8",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libblkid1:amd64",
+      "version": "2.37.2-4ubuntu3.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libbrotli1:amd64",
+      "version": "1.0.9-2build6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libbsd0:amd64",
+      "version": "0.11.5-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libbz2-1.0:amd64",
+      "version": "1.0.8-5build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libc-bin",
+      "version": "2.35-0ubuntu3.10",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libc-dev-bin",
+      "version": "2.35-0ubuntu3.10",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libc-devtools",
+      "version": "2.35-0ubuntu3.10",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libc6:amd64",
+      "version": "2.35-0ubuntu3.10",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libc6-dev:amd64",
+      "version": "2.35-0ubuntu3.10",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libcap-ng0:amd64",
+      "version": "0.7.9-2.2build3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libcap2:amd64",
+      "version": "1:2.44-1ubuntu0.22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libcc1-0:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libcom-err2:amd64",
+      "version": "1.46.5-2ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libcrypt-dev:amd64",
+      "version": "1:4.4.27-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libcrypt1:amd64",
+      "version": "1:4.4.27-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libctf-nobfd0:amd64",
+      "version": "2.38-4ubuntu2.8",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libctf0:amd64",
+      "version": "2.38-4ubuntu2.8",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libcurl4:amd64",
+      "version": "7.81.0-1ubuntu1.20",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libdb5.3:amd64",
+      "version": "5.3.28+dfsg1-0.8ubuntu3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libdebconfclient0:amd64",
+      "version": "0.261ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libdeflate0:amd64",
+      "version": "1.10-2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libdpkg-perl",
+      "version": "1.21.1ubuntu2.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libexpat1:amd64",
+      "version": "2.4.7-1ubuntu0.6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libexpat1-dev:amd64",
+      "version": "2.4.7-1ubuntu0.6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libext2fs2:amd64",
+      "version": "1.46.5-2ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libfakeroot:amd64",
+      "version": "1.28-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libffi8:amd64",
+      "version": "3.4.2-4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libfile-fcntllock-perl",
+      "version": "0.22-3build7",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libfontconfig1:amd64",
+      "version": "2.13.1-4.2ubuntu5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libfreetype6:amd64",
+      "version": "2.11.1+dfsg-1ubuntu0.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgcc-11-dev:amd64",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgcc-s1:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgcrypt20:amd64",
+      "version": "1.9.4-3ubuntu3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgd3:amd64",
+      "version": "2.3.0-2ubuntu2.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgdbm-compat4:amd64",
+      "version": "1.23-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgdbm6:amd64",
+      "version": "1.23-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgmp10:amd64",
+      "version": "2:6.2.1+dfsg-3ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgnutls30:amd64",
+      "version": "3.7.3-4ubuntu1.7",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgomp1:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgpg-error0:amd64",
+      "version": "1.43-3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libgssapi-krb5-2:amd64",
+      "version": "1.19.2-2ubuntu0.7",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libhogweed6:amd64",
+      "version": "3.7.3-1build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libidn2-0:amd64",
+      "version": "2.3.2-2build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libisl23:amd64",
+      "version": "0.24-2build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libitm1:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libjbig0:amd64",
+      "version": "2.1-3.1ubuntu0.22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libjpeg-turbo8:amd64",
+      "version": "2.1.2-0ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libjpeg8:amd64",
+      "version": "8c-2ubuntu10",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libjs-jquery",
+      "version": "3.6.0+dfsg+~3.5.13-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libjs-sphinxdoc",
+      "version": "4.3.2-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libjs-underscore",
+      "version": "1.13.2~dfsg-2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libk5crypto3:amd64",
+      "version": "1.19.2-2ubuntu0.7",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libkeyutils1:amd64",
+      "version": "1.6.1-2ubuntu3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libkrb5-3:amd64",
+      "version": "1.19.2-2ubuntu0.7",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libkrb5support0:amd64",
+      "version": "1.19.2-2ubuntu0.7",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libksba8:amd64",
+      "version": "1.6.0-2ubuntu0.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libldap-2.5-0:amd64",
+      "version": "2.5.19+dfsg-0ubuntu0.22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libldap-common",
+      "version": "2.5.19+dfsg-0ubuntu0.22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "liblocale-gettext-perl",
+      "version": "1.07-4build3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "liblsan0:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "liblz4-1:amd64",
+      "version": "1.9.3-2build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "liblzma5:amd64",
+      "version": "5.2.5-2ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libmd0:amd64",
+      "version": "1.0.4-1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libmount1:amd64",
+      "version": "2.37.2-4ubuntu3.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libmpc3:amd64",
+      "version": "1.2.1-2build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libmpdec3:amd64",
+      "version": "2.5.1-2build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libmpfr6:amd64",
+      "version": "4.1.0-3build3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libncurses6:amd64",
+      "version": "6.3-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libncursesw6:amd64",
+      "version": "6.3-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libnettle8:amd64",
+      "version": "3.7.3-1build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libnghttp2-14:amd64",
+      "version": "1.43.0-1ubuntu0.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libnpth0:amd64",
+      "version": "1.6-3build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libnsl-dev:amd64",
+      "version": "1.3.0-2build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libnsl2:amd64",
+      "version": "1.3.0-2build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libp11-kit0:amd64",
+      "version": "0.24.0-6build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpam-modules:amd64",
+      "version": "1.4.0-11ubuntu2.6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpam-modules-bin",
+      "version": "1.4.0-11ubuntu2.6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpam-runtime",
+      "version": "1.4.0-11ubuntu2.6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpam0g:amd64",
+      "version": "1.4.0-11ubuntu2.6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpcre2-8-0:amd64",
+      "version": "10.39-3ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpcre3:amd64",
+      "version": "2:8.39-13ubuntu0.22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libperl5.34:amd64",
+      "version": "5.34.0-3ubuntu1.5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpng16-16:amd64",
+      "version": "1.6.37-3build5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libprocps8:amd64",
+      "version": "2:3.3.17-6ubuntu2.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpsl5:amd64",
+      "version": "0.21.0-1.2build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpython3-dev:amd64",
+      "version": "3.10.6-1~22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpython3-stdlib:amd64",
+      "version": "3.10.6-1~22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpython3.10:amd64",
+      "version": "3.10.12-1~22.04.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpython3.10-dev:amd64",
+      "version": "3.10.12-1~22.04.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpython3.10-minimal:amd64",
+      "version": "3.10.12-1~22.04.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libpython3.10-stdlib:amd64",
+      "version": "3.10.12-1~22.04.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libquadmath0:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libreadline8:amd64",
+      "version": "8.1.2-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "librtmp1:amd64",
+      "version": "2.4+20151223.gitfa8646d.1-2build4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsasl2-2:amd64",
+      "version": "2.1.27+dfsg2-3ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsasl2-modules:amd64",
+      "version": "2.1.27+dfsg2-3ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsasl2-modules-db:amd64",
+      "version": "2.1.27+dfsg2-3ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libseccomp2:amd64",
+      "version": "2.5.3-2ubuntu3~22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libselinux1:amd64",
+      "version": "3.3-1build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsemanage-common",
+      "version": "3.3-1build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsemanage2:amd64",
+      "version": "3.3-1build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsepol2:amd64",
+      "version": "3.3-1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsmartcols1:amd64",
+      "version": "2.37.2-4ubuntu3.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsqlite3-0:amd64",
+      "version": "3.37.2-2ubuntu0.5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libss2:amd64",
+      "version": "1.46.5-2ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libssh-4:amd64",
+      "version": "0.9.6-2ubuntu0.22.04.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libssl3:amd64",
+      "version": "3.0.2-0ubuntu1.19",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libstdc++-11-dev:amd64",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libstdc++6:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libsystemd0:amd64",
+      "version": "249.11-0ubuntu3.16",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libtasn1-6:amd64",
+      "version": "4.18.0-4ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libtiff5:amd64",
+      "version": "4.3.0-6ubuntu0.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libtinfo6:amd64",
+      "version": "6.3-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libtirpc-common",
+      "version": "1.3.2-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libtirpc-dev:amd64",
+      "version": "1.3.2-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libtirpc3:amd64",
+      "version": "1.3.2-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libtsan0:amd64",
+      "version": "11.4.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libubsan1:amd64",
+      "version": "12.3.0-1ubuntu1~22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libudev1:amd64",
+      "version": "249.11-0ubuntu3.16",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libunistring2:amd64",
+      "version": "1.0-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libuuid1:amd64",
+      "version": "2.37.2-4ubuntu3.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libwebp7:amd64",
+      "version": "1.2.2-2ubuntu0.22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libx11-6:amd64",
+      "version": "2:1.7.5-1ubuntu0.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libx11-data",
+      "version": "2:1.7.5-1ubuntu0.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libxau6:amd64",
+      "version": "1:1.0.9-1build5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libxcb1:amd64",
+      "version": "1.14-3ubuntu3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libxdmcp6:amd64",
+      "version": "1:1.1.3-0ubuntu5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libxpm4:amd64",
+      "version": "1:3.5.12-1ubuntu0.22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libxxhash0:amd64",
+      "version": "0.8.1-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "libzstd1:amd64",
+      "version": "1.4.8+dfsg-3build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "linux-libc-dev:amd64",
+      "version": "5.15.0-153.163",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "login",
+      "version": "1:4.8.1-2ubuntu2.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "logsave",
+      "version": "1.46.5-2ubuntu1.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "lsb-base",
+      "version": "11.1.0ubuntu4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "lto-disabled-list",
+      "version": "24",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "make",
+      "version": "4.3-4.1build1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "manpages",
+      "version": "5.10-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "manpages-dev",
+      "version": "5.10-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "mawk",
+      "version": "1.3.4.20200120-3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "media-types",
+      "version": "7.0.0",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "mount",
+      "version": "2.37.2-4ubuntu3.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "ncurses-base",
+      "version": "6.3-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "ncurses-bin",
+      "version": "6.3-2ubuntu0.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "netbase",
+      "version": "6.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "openssl",
+      "version": "3.0.2-0ubuntu1.19",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "passwd",
+      "version": "1:4.8.1-2ubuntu2.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "patch",
+      "version": "2.7.6-7build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "perl",
+      "version": "5.34.0-3ubuntu1.5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "perl-base",
+      "version": "5.34.0-3ubuntu1.5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "perl-modules-5.34",
+      "version": "5.34.0-3ubuntu1.5",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "pinentry-curses",
+      "version": "1.1.1-1build2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "procps",
+      "version": "2:3.3.17-6ubuntu2.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "publicsuffix",
+      "version": "20211207.1025-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3",
+      "version": "3.10.6-1~22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-dev",
+      "version": "3.10.6-1~22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-distutils",
+      "version": "3.10.8-1~22.04",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-lib2to3",
+      "version": "3.10.8-1~22.04",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-minimal",
+      "version": "3.10.6-1~22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-pip",
+      "version": "22.0.2+dfsg-1ubuntu0.6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-pkg-resources",
+      "version": "59.6.0-1.2ubuntu0.22.04.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-setuptools",
+      "version": "59.6.0-1.2ubuntu0.22.04.3",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3-wheel",
+      "version": "0.37.1-2ubuntu0.22.04.1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3.10",
+      "version": "3.10.12-1~22.04.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3.10-dev",
+      "version": "3.10.12-1~22.04.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "python3.10-minimal",
+      "version": "3.10.12-1~22.04.11",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "readline-common",
+      "version": "8.1.2-1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "rpcsvc-proto",
+      "version": "1.4.2-0ubuntu6",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "sed",
+      "version": "4.8-1ubuntu2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "sensible-utils",
+      "version": "0.0.17",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "sysvinit-utils",
+      "version": "3.01-1ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "tar",
+      "version": "1.34+dfsg-1ubuntu0.1.22.04.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "ubuntu-keyring",
+      "version": "2021.03.26",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "ucf",
+      "version": "3.0043",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "usrmerge",
+      "version": "25ubuntu2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "util-linux",
+      "version": "2.37.2-4ubuntu3.4",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "xz-utils",
+      "version": "5.2.5-2ubuntu1",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "zlib1g:amd64",
+      "version": "1:1.2.11.dfsg-2ubuntu9.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "zlib1g-dev:amd64",
+      "version": "1:1.2.11.dfsg-2ubuntu9.2",
+      "type": "deb",
+      "manager": "dpkg"
+    },
+    {
+      "name": "certifi",
+      "version": "2025.8.3",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.4.3",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "idna",
+      "version": "3.10",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "packaging",
+      "version": "25.0",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "pip",
+      "version": "22.0.2",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "psutil",
+      "version": "7.0.0",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "requests",
+      "version": "2.32.5",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "setuptools",
+      "version": "59.6.0",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.5.0",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "wheel",
+      "version": "0.37.1",
+      "type": "python",
+      "manager": "pip"
+    },
+    {
+      "name": "libzstd.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libz.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libz.so",
+      "version": "unknown",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libxxhash.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libxcb.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libwebp.so.7",
+      "version": "7",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libuuid.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libutil.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libunistring.so.2",
+      "version": "2",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libudev.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libubsan.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libtsan.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libtirpc.so.3",
+      "version": "3",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libtirpc.so",
+      "version": "unknown",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libtinfo.so.6",
+      "version": "6",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libtiff.so.5",
+      "version": "5",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libtic.so.6",
+      "version": "6",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libthread_db.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libthread_db.so",
+      "version": "unknown",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libtasn1.so.6",
+      "version": "6",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libsystemd.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libstdc++.so.6",
+      "version": "6",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libssl.so.3",
+      "version": "3",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libssh.so.4",
+      "version": "4",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libss.so.2",
+      "version": "2",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libsqlite3.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libsmartcols.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libsepol.so.2",
+      "version": "2",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libsemanage.so.2",
+      "version": "2",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libselinux.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libseccomp.so.2",
+      "version": "2",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libsasl2.so.2",
+      "version": "2",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "librtmp.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "librt.so.1",
+      "version": "1",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libresolv.so.2",
+      "version": "2",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libresolv.so",
+      "version": "unknown",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libreadline.so.8",
+      "version": "8",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libquadmath.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libp11-kit.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpython3.10.so.1.0",
+      "version": "1.0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpython3.10.so",
+      "version": "unknown",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpthread.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpsl.so.5",
+      "version": "5",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libprocps.so.8",
+      "version": "8",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpng16.so.16",
+      "version": "16",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libperl.so.5.34",
+      "version": "5.34",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpcre2-8.so.0",
+      "version": "0",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpcreposix.so.3",
+      "version": "3",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpcre.so.3",
+      "version": "3",
+      "type": "system_library",
+      "manager": "ldconfig"
+    },
+    {
+      "name": "libpcprofile.so",
+      "version": "unknown",
+      "type": "system_library",
+      "manager": "ldconfig"
+    }
+  ],
+  "services": [],
+  "scan_duration": 0.791231,
+  "local_vulnerabilities": [],
+  "analysis_mode": "hybrid"
+}
