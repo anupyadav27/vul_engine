@@ -124,11 +124,20 @@ Thumbs.db
 
 # Data files
 *.csv
-*.json
 *.db
-*.sql
-*.sql.gz
 *.log
+
+# JSON data files (but keep config JSON files)
+*_data.json
+*_report.json
+*_analysis.json
+output/*.json
+processed_data/*.json
+
+# SQL data files (but keep schema files)
+*_backup.sql
+*_backup.sql.gz
+data/*.sql
 
 # Output directories
 output/
